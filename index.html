@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+        <div class="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="#">Settings</a></li>
+                <li><a href="#">Logout</a></li>
+                <div class="prompt">
+                    <h1>Want to input your own data?</h1>
+                    <button id="showInputForm">Enter</button>
+    
+                    <div class="user-input" id="userInputForm" style="display: none;">
+                        <h3>Enter Data for Chart</h3>
+                        <label for="labels">Labels (comma-separated):</label>
+                        <input type="text" id="labels" placeholder="e.g., January, February, March">
+                        <br><br>
+                        <label for="data">Data Points (comma-separated):</label>
+                        <input type="text" id="data" placeholder="e.g., 65, 59, 80">
+                        <br><br>
+                        <button id="updateChart">Update Chart</button>
+                    </div>
+                </div>
+            </ul>
+            
+        </div>
+        <div class="main-content">
+            <header class="dash">
+                <h1>This is your Dashboard</h1>
+            </header>
+            <div class="cards">
+                <div class="card">
+                    <h3>User Statistics</h3>
+                    <p>Total Users : 1200</p>
+                    <p>Active Users: 1800</p>
+                </div>
+                <div class="card">
+                    <h3>Income</h3>
+                    <p>Gross : 100000</p>
+                    <p>Net : 65000</p>
+                </div>
+                <div class="card">
+                    <h3>Performance</h3>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>            
+            <div class="recent-activities">
+                <h2>Recent Activities</h2>
+                <ul>
+                    <li>User JohDOe logged in</li>
+                    <li>User JaneDoe posted a comment</li>
+                    <li>Service Maintainance completed</li>                    
+                </ul>
+            </div>   
+            <div class="user-charts">
+                <h2>Your Charts</h2>
+                <div id="chartsContainer"></div>
+            </div>           
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="main.js"></script>
+</body>
+</html>
